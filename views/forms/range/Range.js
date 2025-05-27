@@ -27,7 +27,7 @@ const Range = () => {
               cursor: 'pointer',
               height: '20px',
               width: '20px',
-              filter: 'invert(1)'
+              filter: 'invert(1)'  // ✅ hi try lang
             }}
           />
           <img
