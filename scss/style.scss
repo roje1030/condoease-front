@@ -1,0 +1,136 @@
+@use "@coreui/coreui/scss/coreui" as * with (
+  $enable-deprecation-messages: false,
+);
+
+@use "@coreui/chartjs/scss/coreui-chartjs";
+@use "vendors/simplebar";
+
+// Define custom colors
+$brand-custom: #1D2B57;
+$adaptive-bg-light: white;
+$adaptive-bg-dark: #333;
+$adaptive-border-light: #ccc;
+$adaptive-border-dark: #555;
+
+// Extend theme colors
+$theme-colors: map-merge(
+  (
+    "custom": $brand-custom
+  ),
+  $theme-colors
+);
+
+body {
+  background-color: var(--cui-tertiary-bg);
+}
+
+// Wrapper styling
+.wrapper {
+  width: 100%;
+  padding-inline: var(--cui-sidebar-occupy-start, 0) var(--cui-sidebar-occupy-end, 0);
+  will-change: auto;
+  @include transition(padding .15s);
+}
+
+// Header & Sidebar Styling
+.header > .container-fluid,
+.sidebar-header {
+  min-height: calc(4rem + 1px);
+}
+
+.sidebar-brand-full {
+  margin-left: 3px;
+}
+
+.sidebar-header {
+  .nav-underline-border {
+    --cui-nav-underline-border-link-padding-x: 1rem;
+    --cui-nav-underline-border-gap: 0;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: calc(4rem + 1px);
+  }
+}
+
+.sidebar-toggler {
+  margin-inline-start: auto;
+}
+
+.sidebar-narrow,
+.sidebar-narrow-unfoldable:not(:hover) {
+  .sidebar-toggler {
+    margin-inline-end: auto;
+  }
+}
+
+.header > .container-fluid + .container-fluid {
+  min-height: 3rem;
+}
+
+.footer {
+  min-height: calc(3rem + 1px);
+}
+
+// Adaptive button styles
+.adaptive-button {
+  background-color: $adaptive-bg-light;
+  color: black;
+  border: 1px solid $adaptive-border-light;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darken($adaptive-bg-light, 5%);
+  }
+
+  img {
+    filter: none !important;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+// File attachment display styling
+.file-display {
+  border: 1px solid $adaptive-border-light;
+  padding: 0.5rem;
+  color: var(--cui-body-color);
+  background-color: var(--cui-light-bg);
+  min-height: 80px;
+
+  &.no-files {
+    color: var(--cui-body-color-muted);
+  }
+}
+
+// Dark mode styles
+@include color-mode(dark) {
+  body {
+    background-color: var(--cui-dark-bg-subtle);
+  }
+
+  .footer {
+    --cui-footer-bg: var(--cui-body-bg);
+  }
+
+  .adaptive-button {
+    background-color: $adaptive-bg-dark;
+    color: white;
+    border-color: $adaptive-border-dark;
+
+    &:hover {
+      background-color: lighten($adaptive-bg-dark, 5%);
+    }
+  }
+
+  .file-display {
+    background-color: var(--cui-dark-bg);
+    border-color: $adaptive-border-dark;
+  }
+}
