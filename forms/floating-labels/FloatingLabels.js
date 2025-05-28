@@ -10,6 +10,13 @@ const FloatingLabels = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
 
+  const handleContinue = (e) => {
+    e.preventDefault()
+    console.log('Navigate to /forms/form-control with email:', email)
+    navigate('/forms/form-control', { state: { email } })
+}
+
+
   return (
     <CContainer className="vh-100 d-flex flex-column px-4 pt-0">
       {/* Header */}
@@ -56,7 +63,7 @@ const FloatingLabels = () => {
         color="warning"
         className="text-white w-100 rounded-pill shadow-sm mb-3 fw-bold"
         style={{ height: '45px' }}
-        onClick={() => navigate('/register/step2')}
+        onClick={handleContinue}
       >
         Continue with Email
       </CButton>

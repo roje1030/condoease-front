@@ -56,7 +56,7 @@ const FloatingLabels = () => {
         color="warning"
         className="text-white w-100 rounded-pill shadow-sm mb-3 fw-bold"
         style={{ height: '45px' }}
-        onClick={() => navigate('/register/step2')}
+        onClick={() => navigate('/forms/form-control')}
       >
         Continue with Email
       </CButton>

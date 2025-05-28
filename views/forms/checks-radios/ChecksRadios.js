@@ -8,9 +8,8 @@ const ChecksRadios = () => {
   return (
     <CContainer className="d-flex flex-column justify-content-center align-items-center vh-100 text-center">
       {/* LOGO SECTION */}
-      {/* Replace the src with your actual logo path or import */}
       <img
-        src="src/assets/images/logo_color 1.svg" // ← Replace with correct path if needed
+        src="src/assets/images/logo_color 1.svg"
         alt="CondoEase Logo"
         style={{ width: '160px', marginBottom: '20px' }}
       />
@@ -23,7 +22,7 @@ const ChecksRadios = () => {
         color="warning"
         className="text-white fw-bold px-5 py-2 mb-3"
         style={{ borderRadius: '25px' }}
-        onClick={() => navigate('/login')} // ← Route to Layout.js
+        onClick={() => navigate('/login')}
       >
         Login
       </CButton>
@@ -34,7 +33,7 @@ const ChecksRadios = () => {
         <span
           className="text-warning fw-bold"
           style={{ cursor: 'pointer' }}
-          onClick={() => navigate('/signup')} // ← You can update this route as needed
+          onClick={() => navigate('/forms/floating-labels')}
         >
           Sign Up
         </span>
