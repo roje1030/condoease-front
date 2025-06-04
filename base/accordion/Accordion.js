@@ -92,9 +92,9 @@ const Accordion = () => {
         className="mx-3 my-3"
         style={{
           height: '1px',
-          backgroundColor: '#00000000',
-          boxShadow: '0 4px 6px #00000040',
-          borderRadius: '4px'
+          backgroundColor: '#00000000'
+          // boxShadow: '0 4px 6px #00000040',
+          // borderRadius: '4px'
         }}
       ></div>
 
